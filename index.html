@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Timer</title>
+</head>
+<body>
+    <audio id="sound" src="./Componentes/Sons/alarm.mp3" style="display: none;"></audio>
+
+    <div class="container">
+        <h2>Horas:</h2>
+        <select id="horas" name="horas"></select>
+
+        <h2>Minutos:</h2>
+        <select id="minutos" name="minutos"></select>
+
+        <h2>Segundos:</h2>
+        <select id="segundos" name="segundos"></select>
+        <br/>
+        <br/>
+        <button id="iniciar">Iniciar</button>
+        <button id="resetar">Resetar</button>
+        <button id="parar">Parar</button>
+        
+
+        <div id="display">
+            <h3></h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
