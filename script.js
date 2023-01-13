@@ -28,15 +28,15 @@
     }
 
 
-    iniciar.addEventListener('click',function comecar(){
-    
+    iniciar.addEventListener('click',function(){
+
     horaAtual = horas.value
     minutoAtual = minutos.value
     segundoAtual = segundos.value
     display.childNodes[1].innerHTML = horaAtual+": "+minutoAtual+": "+segundoAtual
     clearInterval(interval)
 
-    interval = setInterval(function(){
+    interval = setInterval(function (){
         
     
     if(horaAtual== 0 && minutoAtual == 0 && segundoAtual == 0){
@@ -85,15 +85,18 @@
     })
            
     
-     document.addEventListener('keyup',function(event){
-    if(event.key === "p" ){
+     document.addEventListener('keyup',function(eventP){
+    if(eventP.key === "p" ){
 
    
     clearInterval(interval)
        
     }
     
-    else(event.key === "r" )
+})
+
+document.addEventListener('keyup',function(eventR){
+    if (eventR.key === "r" )
     {
         horaAtual = 0
         minutoAtual = 0
@@ -101,11 +104,48 @@
         display.childNodes[1].innerHTML = horaAtual+": "+minutoAtual+": "+segundoAtual
         clearInterval(interval)
     
-    }
-
-    
+    }    
 })
 
+document.addEventListener('keyup',function(eventI){
+    if (eventI.key === "i" )
+    {
+        horaAtual = horas.value
+    minutoAtual = minutos.value
+    segundoAtual = segundos.value
+    display.childNodes[1].innerHTML = horaAtual+": "+minutoAtual+": "+segundoAtual
+    clearInterval(interval)
+
+    interval = setInterval(function (){
+        
+    
+    if(horaAtual== 0 && minutoAtual == 0 && segundoAtual == 0){
+    horaAtual = 0;
+    inutoAtual = 0;
+    segundoAtual = 0;
+                
+    alert("Acabou o Tempo!")
+    document.getElementById('sound').play();
+    clearInterval(interval)
+
+    }else if(segundoAtual != 0){
+        segundoAtual --;
+
+    }else if(minutoAtual != 0 && segundoAtual == 0 ) {
+        segundoAtual = 59;
+        minutoAtual --;
+
+    }else if(horaAtual != 0 && minutoAtual == 0){
+        minutoAtual = 60;
+        horaAtual --;
+               
+            return;    
+    }
+
+    display.childNodes[1].innerHTML = horaAtual+":"+minutoAtual+":"+segundoAtual
+    },1000)
+    }    
+})
 
     
 
